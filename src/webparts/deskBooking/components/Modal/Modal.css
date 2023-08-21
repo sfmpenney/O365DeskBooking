@@ -1,0 +1,23 @@
+.abm-ModalContainer{
+    min-height:50px;
+    display: inline-block;
+    position: relative;
+}
+
+.abm-ModalHeading{
+    border-top: 4px solid #ff9906;
+    font-family: Calibri;
+    font-size: 26px;
+    padding:10px;
+    color: #681029 !important;
+}
+
+.abm-ModalHeading button{
+    float:right;
+    margin-top:-5px;
+}
+
+.abm-ModalBody{
+    padding:0px 20px 20px 20px;
+    font-size: 14px;
+}

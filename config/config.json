@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "desk-booking-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/deskBooking/DeskBookingWebPart.js",
+          "manifest": "./src/webparts/deskBooking/DeskBookingWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "DeskBookingWebPartStrings": "lib/webparts/deskBooking/loc/{locale}.js"
+  }
+}

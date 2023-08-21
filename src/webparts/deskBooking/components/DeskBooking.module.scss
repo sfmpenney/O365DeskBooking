@@ -1,0 +1,734 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.deskBooking {
+  .CanvasComponent, body {
+    overflow-x: visible!important;
+    overflow-y: visible!important;
+  }
+    
+  div.webPartContainer
+  {
+    display: none!important;
+  }
+  
+  #waitforLoad, #pageLoaded
+  {
+    display: none;
+    z-index: 0;
+  }
+  
+  #selectedDate
+  {
+    width: 20%;
+  }
+  
+  #contentRow
+  {
+    text-align: center!important;
+  }
+  
+  #bookDesk
+  {
+    float: left;
+  }
+  
+  .bookDesk, .freeDesk
+  {
+    background-color: #ff9906!important; 	
+    font-size: 12pt!important;
+    font-weight: bold!important;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .bookDesk:hover, .freeDesk:hover
+  {
+    background-color: #681029!important; 	
+    color: #ffffff!important;
+    border: #ff9906 inset solid!important;
+    cursor: pointer;
+  }
+  
+  .container
+  {
+    position: absolute;
+    margin-left: -7em;
+    width: 100%!important;
+    text-align: center;
+    z-index: 1;	
+  }
+  
+  #searchUser
+  {
+    margin-right: 5%;
+  }
+  
+  .selectUser
+  {
+    font-size: 11pt;
+    min-width: 280px;
+    margin-left: -9.5em;
+    margin-right: 5%;
+  }
+  
+  .userSelected
+  {
+    border: dodgerblue 4px solid!important;
+    border-radius: 50%;
+    height: 45px;
+  }
+  
+  .dateBooked
+  {
+    border: red 4px solid!important;
+    background-color:transparent;
+    cursor: pointer;
+    background-color:aliceblue;
+    height: 38px!important;
+    width: 38px!important;
+    border-radius: 50%;
+  }
+  
+  .dateBookedPM
+  {
+    border-left: green 4px solid!important;
+    border-bottom: green 4px solid!important;
+    border-top: red 4px solid!important;
+    border-right: red 4px solid!important
+  }
+  
+  .dateBookedAM
+  {
+  
+    border-right: green 4px solid!important;
+    border-top: green 4px solid!important;
+    border-bottom: red 4px solid!important;
+    border-left: red 4px solid!important;
+  }
+  .dateSelected
+  {
+    border: green 4px solid!important;
+    border: 50%;
+    height:45px;
+  }
+  
+  .dateSelectedAM
+  {
+    border-left: green 4px solid!important;
+    border-bottom: green 4px solid!important;
+    border-top: red 4px solid!important;
+    border-right: red 4px solid!important;
+  }
+  
+  .dateSelectedPM
+  {
+  
+    border-right: green 4px solid!important;
+    border-top: green 4px solid!important;
+    border-bottom: red 4px solid!important;
+    border-left: red 4px solid!important;
+  }
+  
+  #checkDate
+  {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .showMeAll, .showMeMorning, .showMeAfternoon, .showMeClear
+  {
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    border: red thin double;
+    background-color: bisque;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .showMeAll:hover, .showMeMorning:Hover, .showMeAfternoon:hover, .showMeClear:hover
+  {
+    background-color: #ff9906;
+    color: bisque!important;
+  }
+  
+  #floorplan img
+  {
+    position: absolute;
+  }
+  
+  .markerCircle
+  {
+    border-radius: 100%!important;
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .unavailable
+  {
+    border-left: dodgerblue 4px solid ;
+    border-bottom: dodgerblue 4px solid;
+    border-right: dodgerblue 4px solid;
+    border-top: dodgerblue 4px solid;
+    cursor: pointer;
+    background-color:aliceblue;
+    height: 38px!important;
+    width: 38px!important;
+    border-radius: 50%;
+  }
+  
+  .inOfficeMorning, .inOfficeMorningSmall
+  {
+    border-left:red 4px solid ;
+    border-bottom: red 4px solid;
+  }
+  
+  .inOfficeAfternoon, .inOfficeAfternoonSmall
+  {
+    border-right: red 4px solid;
+    border-top: red 4px solid;
+  }
+  
+  .outOffice, .outOfficeSmall
+  {
+    border-left:green 4px solid;
+    border-bottom: green 4px solid;
+    border-right:green 4px solid;
+    border-top: green 4px solid;
+  }
+  
+  .markerSmall
+  {
+    cursor: pointer;
+    height: 30px!important;
+    width: 30px!important;
+    border-radius: 50%;
+  }
+  
+  .markerSmaller
+  {
+    cursor: pointer;
+    height: 20px!important;
+    width: 20px!important;
+    border-radius: 50%;
+  }
+  
+  .marker
+  {
+    background-color:transparent;
+    height: 38px!important;
+    width: 38px!important;
+    border-radius: 50%;
+    border: 50%;
+    background-color: #ffff66;
+    border-left:green 4px solid;
+    border-bottom: green 4px solid;
+    border-right:green 4px solid;
+    border-top: green 4px solid;
+    cursor: none;
+  }
+  
+  .marker:empty
+  {
+    display: none;
+    border:green 4px solid;
+  }
+  
+  .closeDesk
+  {
+    vertical-align: top;
+    float: right;
+    font-weight: bold;
+    font-size: 11pt;
+    background-color: red;
+    color: white;
+    border-radius: 70%;
+    padding-left: 3px;
+    padding-right: 3px;
+    z-index: -1;
+    cursor: pointer;
+  }
+  
+  div[ID*='desk']
+  {
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  div[Class*='desk']
+  {
+    min-height: 50px;
+    min-width: 250px;
+    background:#ffffff;
+    position: absolute;
+    border: 3px double dodgerblue;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    z-index: 1;
+    text-align: left!important;
+    margin-inline-start: -5%;
+  }
+  
+  #desk1, .desk1
+  {
+    top:8em;
+    left: 5.5em;
+  }
+  
+  #desk2, .desk2
+  {
+    top: 16.5em;
+    left: 5.5em; 
+  }
+  
+  #desk3, .desk3
+  {
+    top: 8.3em;
+    left: 13em;
+  }
+  
+  #desk4, .desk4{
+    top: 8.3em;
+    left: 17.2em;
+  }
+  
+  #desk5, .desk5
+  {
+    top: 12.2em;
+    left: 13em;
+  }
+  
+  
+  #desk6, .desk6
+  {
+    top: 12.3em;
+    left: 17.2em;
+  }
+  
+  #desk7, .desk7
+  {
+    top: 9.4em;
+    left: 23em;
+  }
+  
+  #desk8, .desk8
+  {
+    top: 8.9em;
+    left: 27em;
+  }
+  
+  #desk9, .desk9
+  {
+    top: 13.2em;
+    left: 23.5em;
+  }
+  
+  #desk10, .desk10
+  {
+    top:12.6em;
+    left:27.5em;
+  }
+  
+  #desk11, .desk11
+  {
+    top:7.9em;
+    left: 32.3em;
+  }
+  
+  #desk12, .desk12
+  {
+    top: 7.4em;
+    left: 36.2em;
+  }
+  
+  #desk13, .desk13
+  {
+    top:11.7em;
+    left: 32.9em;
+  }
+  
+  #desk14, .desk14
+  {
+    top: 11.3em;
+    left: 36.7em;
+  }
+  
+  #desk15, .desk15
+  {
+    top: 8.2em;
+    left: 43em;
+  }
+  
+  #desk16, .desk16
+  {
+    top:8.2em;
+    left: 47em;
+  }
+  
+  #desk17, .desk17
+  {
+    top: 12.2em;
+    left: 43em;
+  }
+  
+  #desk18, .desk18
+  {
+    top: 12.2em;
+    left: 47em;
+  }
+  
+  #desk19, .desk19
+  {
+    top: 16.1em;
+    left: 43em;
+  }
+  
+  #desk20, .desk20
+  {
+    top: 16.1em;
+    left: 47em;
+  }
+  
+  #desk21, .desk21
+  {
+    top: 22.3em;
+    left: 43em;
+  }
+  
+  #desk22, .desk22
+  {
+    top: 22.3em;
+    left: 47em;
+  }
+  
+  #desk23, .desk23
+  {
+    top: 26.3em;
+    left: 43em;
+  }
+  
+  #desk24, .desk24
+  {
+    top: 26.3em;
+    left: 47em;
+  }
+  
+  #desk25, .desk25
+  {
+    top: 7em;
+    left: 52em;
+  }
+  
+  #desk26, .desk26
+  {
+    top:7em;
+    left: 56em;
+  }
+  
+  #desk27, .desk27
+  {
+    top: 12.2em;
+    left: 52em;
+  }
+  
+  #desk28, .desk28
+  {
+    top: 12.2em;
+    left: 56em;
+  }
+  
+  #desk29, .desk29
+  {
+    top: 16.1em;
+    left: 52em;
+  }
+  
+  #desk30, .desk30
+  {
+    top: 16.1em;
+    left: 56em;
+  }
+  
+  #desk31, .desk31
+  {
+    top: 22.3em;
+    left: 53.5em;
+  }
+  
+  #desk32, .desk32
+  {
+    top: 22.3em;
+    left: 57.3em;
+  }
+  
+  #desk33, .desk33
+  {
+    top: 26.3em;
+    left: 53.5em;
+  }
+  
+  #desk34, .desk34
+  {
+    top: 26.3em;
+    left: 57.3em;
+  }
+  
+  #desk35, .desk35
+  {
+    top: 7em;
+    left: 61.7em;
+  }
+  
+  #desk36, .desk36
+  {
+    top:7em;
+    left: 65.5em;
+  }
+  
+  #desk37, .desk37
+  {
+    top: 12.2em;
+    left: 61.7em;
+  }
+  
+  #desk38, .desk38
+  {
+    top: 12.2em;
+    left: 65.5em;
+  }
+  
+  #desk39, .desk39
+  {
+    top: 16.1em;
+    left: 61.7em;
+  }
+  
+  #desk40, .desk40
+  {
+    top: 16.1em;
+    left: 65.5em;
+  }
+  
+  #desk41, .desk41
+  {
+    top: 22.3em;
+    left: 63.7em;
+  }
+  
+  #desk42, .desk42
+  {
+    top: 22.3em;
+    left: 67.7em;
+  }
+  
+  #desk43, .desk43
+  {
+    top: 26.3em;
+    left: 63.7em;
+  }
+  
+  #desk44, .desk44
+  {
+    top: 26.3em;
+    left: 67.7em;
+  }
+  
+  #desk45, .desk45
+  {
+    top: 8.2em;
+    left: 70.51em;
+  }
+  
+  #desk46, .desk46
+  {
+    top: 8.2em;
+    left: 74.5em;
+  }
+  
+  #desk47, .desk47
+  {
+    top: 12.2em;
+    left: 70.5em;
+  }
+  
+  #desk48, .desk48
+  {
+    top: 12.2em;
+    left: 74.5em;
+  }
+  
+  #desk49, .desk49
+  {
+    top: 16.1em;
+    left:70.5em;
+  }
+  
+  #desk50, .desk50
+  {
+    top: 16.1em;
+    left: 74.5em;
+  }
+  
+  #desk51, .desk51
+  {
+    top: 7em;
+    left: 80em;
+  }
+  
+  #desk52, .desk52
+  {
+    top: 7em;
+    left: 83.9em;
+  }
+  
+  #desk53, .desk53
+  {
+    top: 12.2em;
+    left: 80em;
+  }
+  
+  #desk54, .desk54
+  {
+    top: 12.2em;
+    left: 83.83em;
+  }
+  
+  #desk55, .desk55
+  {
+    top: 16.1em;
+    left: 80em;
+  }
+  
+  #desk56, .desk56
+  {
+    top: 16.1em;
+    left: 83.83em;
+  }
+  
+  #desk57, .desk57
+  {
+    top: 7.55em;
+    left: 94.5em;
+  }
+  
+  #desk58, .desk58
+  {
+    top: 13.5em;
+    left: 92.9em;
+  }
+  
+  #desk59, .desk59
+  {
+    top: 13.5em;
+    left: 97em;
+  }
+  
+  #desk60, .desk60
+  {
+    top: 20.8em;
+    left: 93em;
+  }
+  
+  #desk61, .desk61
+  {
+    top: 20.8em;
+    left: 97em;
+  }
+  
+  #desk62, .desk62
+  {
+    top: 24.8em;
+    left: 93em;
+  }
+  
+  #desk63, .desk63
+  {
+    top:24.8em;
+    left: 97em;
+  }
+  
+    .container {
+      width: 100%;
+      display: flex;
+    }
+  
+    .row {
+      margin-left: -50%;
+    margin-top: -2%;
+    }
+  
+  
+    .column {
+    width: 100%!important;
+    margin-left: 45%;
+    position: relative;
+    overflow-x: scroll!important;
+  
+    }
+  
+    .title {
+      @include ms-font-xl;
+      @include ms-fontColor-white;
+    }
+  
+    .subTitle {
+      @include ms-font-l;
+      @include ms-fontColor-white;
+    }
+  
+    .description {
+      @include ms-font-l;
+      @include ms-fontColor-white;
+    }
+  
+    .button {
+      // Our button
+      text-decoration: none;
+      height: 32px;
+  
+      // Primary Button
+      min-width: 80px;
+      background-color: #ff9906;
+      border-color: $ms-color-themePrimary;
+      color: #36454F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 10px 10px 10px;
+    margin-right: 5px;
+  
+      // Basic Button
+      outline: transparent;
+      position: relative;
+      font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: $ms-font-size-m;
+      font-weight: $ms-font-weight-regular;
+      border-width: 0;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 16px;
+  
+      .label {
+        font-weight: $ms-font-weight-semibold;
+        font-size: $ms-font-size-m;
+        height: 32px;
+        line-height: 32px;
+        margin: 0 4px;
+        vertical-align: top;
+        display: inline-block;
+      }
+    }
+   
+  }
+  
+  
+  @media only screen and (max-width: 1300px) {
+    #desk60, .desk60
+  {
+    top: 25.6em;
+    left: 111.8em;
+  }
+  
+    }
